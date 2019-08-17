@@ -4,16 +4,28 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace KKU_Internet_Autologin
 {
     public partial class Form1 : Form
     {
+        login l = new login();
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Login_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("กำลังเข้าสู่ระบบ");
+            string u = user.Text;
+            string pass = password.Text;
+            Thread myNewThread = new Thread(() => l.login_cli(u, pass));
+            myNewThread.Start();
         }
     }
 }

@@ -89,6 +89,7 @@
             this.login.TabIndex = 5;
             this.login.Text = "Login";
             this.login.UseVisualStyleBackColor = true;
+            this.login.Click += new System.EventHandler(this.Login_Click);
             // 
             // Form1
             // 
