@@ -25,7 +25,23 @@ namespace KKU_Internet_Autologin
             string u = user.Text;
             string pass = password.Text;
             Thread myNewThread = new Thread(() => l.login_cli(u, pass));
+            myNewThread.IsBackground = true;
             myNewThread.Start();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(Environment.ExitCode);
         }
     }
 }
